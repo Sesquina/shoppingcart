@@ -1,0 +1,1 @@
+{/*Header will show the Name of store with styling*/}

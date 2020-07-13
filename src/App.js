@@ -7,7 +7,7 @@ import Cart from './components/Cart';
 function App() {
   return (
     <div className="App">
-      <h1> Shopping Cart </h1>
+      <h1> NamaSlay </h1>
       <Cart/>
     </div>
   );

@@ -63,6 +63,8 @@ class Cart extends Component {
 
     return (
       <div className="wrapper">
+
+
         <div className="firstItems">
         <img />
        <img src='./assets/namaslaymat.jpg'/>
@@ -72,12 +74,36 @@ class Cart extends Component {
       {mat.quantity}
       <button className='btn' onClick={()=> {this.subQuantity(0)}}> Remove From Cart</button>
       </div>
+
+
       <div className="secondItems">
         <img src='./assets/harempants.jpeg'/>
         {harem.name}
         {harem.price}
         <button className='btn' onClick={() => {this.addQuantity(1)}}>Add To Cart</button>
+        {harem.quantity}
+        <button className='btn' onClick={() => {this.subQuantity(1)}}> Remove From Cart </button>
       </div>
+
+      <div className="thirdItems">
+        <img src='./assets/chakrabowl.jpg'/>
+        {bowl.name}
+        {bowl.price}
+        <button className='btn' onClick={() => {this.addQuantity(2)}}>Add To Cart</button>
+        {bowl.quantity}
+        <button className='btn' onClick={() => {this.subQuantity(2)}}> Remove From Cart </button>
+      </div>
+
+      <div className="fourthItems">
+        <img src='./assets/palosanto.jpg'/>
+        {palo.name}
+        {palo.price}
+        <button className='btn' onClick={() => {this.addQuantity(3)}}>Add To Cart</button>
+        {palo.quantity}
+        <button className='btn' onClick={() => {this.subQuantity(3)}}> Remove From Cart </button>
+      </div>
+
+
 
 
 export default Cart;

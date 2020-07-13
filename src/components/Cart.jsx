@@ -13,28 +13,26 @@ class Cart extends Component {
           id: 1,
           product: "Yoga Lesson",
           quantity: 0,
-          price: 25
-      
+          price: 25,
         },
         {
           id: 2,
           product: "Harem Pants",
           quantity: 0,
-          price: 30   
+          price: 30,
         },
         {
           id: 3,
           product: "Chakra Bowl",
           quantity: 0,
-          price: 40
-            
+          price: 40,
         },
         {
           id: 4,
           product: "Palo Santo",
           quantity: 0,
-          price: 15
-        }
+          price: 15,
+        },
       ],
       cartSubTotal: 0,
       tax: 0.06,
@@ -63,7 +61,10 @@ class Cart extends Component {
     let matQuant = mat.quantity;
     let haremQuant = harem.quantity;
 
-    let CartSubTotal = yogaQuant * yoga.price + matQuant * mat.price + haremQuant * harem.quantity;
+    let CartSubTotal =
+      yogaQuant * yoga.price +
+      matQuant * mat.price +
+      haremQuant * harem.quantity;
 
     let tax = CartSubTotal * this.state.tax;
     let total = tax * CartSubTotal;
@@ -71,31 +72,31 @@ class Cart extends Component {
       <div className="term">
         <div className="items">
           <dt>
-          <div className="firstItem">
-            {yoga.product} ${yoga.price}
+            <div className="firstItem">
             <br></br>
-            <br></br>
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => {
-                this.subQuantity(0);
-              }}
-            >
-              {" "}
-              -{" "}
-            </button>
-            <dd>
-            {yoga.quantity}
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => this.addQuantity(0)}
-            >
-              {" "}
-              +{" "}
-            </button>
-            <br></br>
-            </dd>
-          </div>
+              {yoga.product} ${yoga.price} 
+              <br></br>
+              <button
+                className="btn btn-secondary btn-sm"
+                onClick={() => {
+                  this.subQuantity(0);
+                }}
+              >
+                {" "}
+                -{" "}
+              </button>
+              <dd>
+                {yoga.quantity}
+                <button
+                  className="btn btn-secondary btn-sm"
+                  onClick={() => this.addQuantity(0)}
+                >
+                  {" "}
+                  +{" "}
+                </button>
+                <br></br>
+              </dd>
+            </div>
           </dt>
           <div className="secondItem">
             <br></br>
@@ -143,17 +144,17 @@ class Cart extends Component {
           </div>
         </div>
         <dt>
-        <div className="checkOut">
-          <hr/>
-          {sum} Items
-          <br></br>
-          <br></br>
-          Subtotal: ${CartSubTotal}
-          <br></br>
-          Estimated Tax: {tax}
-          <br></br>
-          Total: {total}
-        </div>
+          <div className="checkOut">
+            <hr />
+            {sum} Items in Cart
+            <br></br>
+            <br></br>
+            Subtotal: ${CartSubTotal}
+            <br></br>
+            Estimated Tax: {tax}
+            <br></br>
+            Total: {total}
+          </div>
         </dt>
       </div>
     );

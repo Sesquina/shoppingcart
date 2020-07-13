@@ -1,15 +1,14 @@
 import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Cart from "./Cart";
+import 'bootstrap/dist/css/bootstrap.css';
+import Cart from './components/Cart';
 
 function App() {
   return (
-    <div>
-      <h1>
-        <span>NamaSlay</span>
-      </h1>
-      <Cart />
-      
+    <div className="App">
+      <h1> Shopping Cart </h1>
+      <Cart/>
     </div>
   );
 }

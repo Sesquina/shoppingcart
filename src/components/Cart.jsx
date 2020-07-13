@@ -54,8 +54,7 @@ class Cart extends Component {
     let bowl = this.state.item[2];
     let palo = this.state.item[3];
 
-    let cartSubTotal = 
-    (mat.quantity * mat.price.toFixed(2)) + (harem.quantity * harem.price.toFixed(2))+ (bowl.quantity * bowl.price.toFixed(2)) + (palo.quantity * palo.price.toFixed(2))   
+    let cartSubTotal = (mat.quantity * mat.price.toFixed(2)) + (harem.quantity * harem.price.toFixed(2))+ (bowl.quantity * bowl.price.toFixed(2)) + (palo.quantity * palo.price.toFixed(2))   
     let finalTax = cartSubTotal.toFixed(2) * this.state.tax.toFixed(2);
     let totalItemSum = mat.quantity + harem.quantity + bowl.quantity + palo.quantity;
     let {quantity} = this.state.item [0];
@@ -103,7 +102,16 @@ class Cart extends Component {
         <button className='btn' onClick={() => {this.subQuantity(3)}}> Remove From Cart </button>
       </div>
 
-
-
+      <div className='checkOut'>
+        <h1>Order Summary</h1>
+        <h3>Items in Cart {totalItemSum}</h3>
+        <h3>Subtotal {cartSubTotal}</h3>
+        <h3>Tax {finalTax}</h3>
+        <h3>Total {total}</h3>
+      </div>
+      </div>
+        )
+    }
+}
 
 export default Cart;

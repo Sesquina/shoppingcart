@@ -37,19 +37,30 @@
   }
 }
 
+header {
+  background-color: #73AD21;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #fff;
+  font-family: "McLaren", cursive;
+  font-weight: 200;
+}
+
 
 .card{
 width: 18rem;
 color: #73AD21;
+margin: 0 auto; 
+float: none; 
+margin-bottom: 10px; 
 }
 
 .checkOut{
-  position: relative;
-  bottom: 10px;
-  width:50%;
-  margin-top: 25px;
-  margin-left: 200px;
-  margin-bottom: 25px;
-  padding: 10px;
+  margin: 0 auto;
   border: 3px solid #73AD21;
+  position: relative;
 }

@@ -1,10 +1,15 @@
 import React from 'react';
 import './App.css';
-import App from './components/App';
+import Cart from "./Cart";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <h1>
+        <span>NamaSlay</span>
+      </h1>
+      <Cart />
+      
     </div>
   );
 }

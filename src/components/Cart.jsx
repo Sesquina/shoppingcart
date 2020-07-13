@@ -10,34 +10,30 @@ class Cart extends Component {
     this.state = {
       item: [
         {
-          id: 1,
-          product: "Yoga Lesson",
+          name: "Yoga Mat",
           quantity: 0,
-          price: 25,
+          price: 25.00,
         },
         {
-          id: 2,
-          product: "Harem Pants",
+          name: "Harem Pants",
           quantity: 0,
-          price: 30,
+          price: 30.00,
         },
         {
-          id: 3,
-          product: "Chakra Bowl",
+          name: "Chakra Bowl",
           quantity: 0,
-          price: 40,
+          price: 40.00,
         },
         {
-          id: 4,
-          product: "Palo Santo",
+          name: "Palo Santo",
           quantity: 0,
-          price: 15,
+          price: 15.00,
         },
       ],
       cartSubTotal: 0,
       tax: 0.06,
       total: 0,
-    };
+    }
   }
 
   addQuantity = (index) => {
@@ -53,112 +49,35 @@ class Cart extends Component {
   };
 
   render() {
-    let yoga = this.state.item[0];
-    let mat = this.state.item[1];
-    let harem = this.state.item[2];
-    let sum = yoga.quantity + mat.quantity + harem.quantity;
-    let yogaQuant = yoga.quantity;
-    let matQuant = mat.quantity;
-    let haremQuant = harem.quantity;
+    let mat = this.state.item[0];
+    let harem = this.state.item[1];
+    let bowl = this.state.item[2];
+    let palo = this.state.item[3];
 
-    let CartSubTotal =
-      yogaQuant * yoga.price +
-      matQuant * mat.price +
-      haremQuant * harem.quantity;
+    let cartSubTotal = 
+    (mat.quantity * mat.price.toFixed(2)) + (harem.quantity * harem.price.toFixed(2))+ (bowl.quantity * bowl.price.toFixed(2)) + (palo.quantity * palo.price.toFixed(2))   
+    let finalTax = cartSubTotal.toFixed(2) * this.state.tax.toFixed(2);
+    let totalItemSum = mat.quantity + harem.quantity + bowl.quantity + palo.quantity;
+    let {quantity} = this.state.item [0];
+    let total = (cartSubTotal + tax).toFixed(2);
 
-    let tax = CartSubTotal * this.state.tax;
-    let total = tax * CartSubTotal;
     return (
-      <div className="term">
-        <div className="items">
-          <dt>
-            <div className="firstItem">
-            <br></br>
-              {yoga.product} ${yoga.price} 
-              <br></br>
-              <button
-                className="btn btn-secondary btn-sm"
-                onClick={() => {
-                  this.subQuantity(0);
-                }}
-              >
-                {" "}
-                -{" "}
-              </button>
-              <dd>
-                {yoga.quantity}
-                <button
-                  className="btn btn-secondary btn-sm"
-                  onClick={() => this.addQuantity(0)}
-                >
-                  {" "}
-                  +{" "}
-                </button>
-                <br></br>
-              </dd>
-            </div>
-          </dt>
-          <div className="secondItem">
-            <br></br>
-            {mat.product} ${mat.price}
-            <br></br>
-            <br></br>
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => this.subQuantity(1)}
-            >
-              {" "}
-              -{" "}
-            </button>
-            {mat.quantity}
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => this.addQuantity(1)}
-            >
-              {" "}
-              +{" "}
-            </button>
-            <br></br>
-          </div>
-          <div className="secondItem">
-            <br></br>
-            {harem.product} ${harem.price}
-            <br></br>
-            <br></br>
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => this.subQuantity(1)}
-            >
-              {" "}
-              -{" "}
-            </button>
-            {harem.quantity}
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => this.addQuantity(1)}
-            >
-              {" "}
-              +{" "}
-            </button>
-            <br></br>
-          </div>
-        </div>
-        <dt>
-          <div className="checkOut">
-            <hr />
-            {sum} Items in Cart
-            <br></br>
-            <br></br>
-            Subtotal: ${CartSubTotal}
-            <br></br>
-            Estimated Tax: {tax}
-            <br></br>
-            Total: {total}
-          </div>
-        </dt>
+      <div className="wrapper">
+        <div className="firstItems">
+        <img />
+       <img src='./assets/namaslaymat.jpg'/>
+      {mat.name}
+      {mat.price}
+      <button className='btn' onClick={() => {this.addQuantity(0)}}>Add To Cart</button>
+      {mat.quantity}
+      <button className='btn' onClick={()=> {this.subQuantity(0)}}> Remove From Cart</button>
       </div>
-    );
-  }
-}
+      <div className="secondItems">
+        <img src='./assets/harempants.jpeg'/>
+        {harem.name}
+        {harem.price}
+        <button className='btn' onClick={() => {this.addQuantity(1)}}>Add To Cart</button>
+      </div>
+
 
 export default Cart;

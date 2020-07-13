@@ -70,8 +70,8 @@ class Cart extends Component {
     let finalTax = cartSubTotal.toFixed(2) * this.state.tax.toFixed(2);
     let totalItemSum =
       mat.quantity + harem.quantity + bowl.quantity + palo.quantity;
-    let { quantity } = this.state.item[0];
-    let total = (cartSubTotal + finalTax).toFixed(2);
+    let {quantity} = this.state.item[0];
+    let total = ((cartSubTotal + finalTax).toFixed(2));
 
     return (
       <div className="row">
@@ -183,10 +183,10 @@ class Cart extends Component {
 
         <div className="checkOut">
           <h1>Order Summary</h1>
-          <h3>Items in Cart {totalItemSum}</h3>
-          <h3>Subtotal {cartSubTotal}</h3>
-          <h3>Tax {finalTax}</h3>
-          <h3>Total {total}</h3>
+          <h3>Items in Cart $ {totalItemSum}</h3>
+          <h3>Subtotal $ {cartSubTotal}</h3>
+          <h3>Tax $ {finalTax.toFixed(2)}</h3>
+          <h3>Total $ {total}</h3>
         </div>
       </div>
     );

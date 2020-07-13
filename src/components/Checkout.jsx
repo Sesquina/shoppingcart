@@ -1,1 +1,0 @@
-{/*Check OUT: Checkout button */}
